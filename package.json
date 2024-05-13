@@ -1,0 +1,49 @@
+{
+  "name": "cy-typescript",
+  "version": "1.0.0",
+  "author": "Uday Koochana",
+  "license": "ISC",
+  "description": "cypress-typescript-cucumber",
+  "main": "index.js",
+  "scripts": {
+    "singleTest": "npx cypress run -e TAGS='@test' --browser chrome --headed",
+    "runAllTests": "npx cypress run --browser chrome --headed",
+    "openCypress": "npx cypress open",
+    "parallel": "cypress-parallel -d cypress/e2e/features/ -t 2 -s runAllTests"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.4",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cucumber-html-reporter": "^7.1.1",
+    "cypress": "^13.9.0",
+    "cypress-parallel": "^0.14.0",
+    "cypress-each": "^1.14.0",
+    "typescript": "^5.4.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "json": {
+      "enabled": true,
+      "generate": true,
+      "output": "cypress/cucumber-json/cucumber-json.json",
+      "formatter": "cucumber-json-formatter"
+    },
+    "html": {
+      "enabled": true,
+      "generate": true,
+      "output": "cypress/cucumber-html/cucumber-html.html",
+      "formatter": "cucumber-html-formatter"
+    },
+    "messages": {
+      "enabled": true,
+      "generate": true,
+      "output": "cypress/messages.ndjson"
+    },
+    "stepDefinitions": [
+      "cypress/e2e/stepDefinitions/**/*.{js,ts}"
+    ]
+  },
+  "dependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  }
+}

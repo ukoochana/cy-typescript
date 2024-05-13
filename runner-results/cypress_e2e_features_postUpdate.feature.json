@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 2,
+  "passes": 2,
+  "pending": 0,
+  "failures": 0,
+  "start": "2024-05-13T12:16:38.066Z",
+  "duration": 311,
+  "file": "cypress/e2e/features/postUpdate.feature"
+}

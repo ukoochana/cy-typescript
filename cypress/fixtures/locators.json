@@ -1,0 +1,6 @@
+{
+  "productLocator": {
+    "productList": "div.inventory_list",
+    "orderConfirmation": "#checkout_complete_container"
+  }
+}
